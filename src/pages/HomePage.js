@@ -134,9 +134,9 @@ export default function HomePage() {
           {/* Row 1 */}
           <div className="flex flex-wrap justify-center sm:justify-start gap-6">
             {[
-              { img: "/assets/img1.png", text: "AR Science", desc: "Explore molecules in AR with interactive 3D models." },
-              { img: "/assets/img2.png", text: "Voice → Text", desc: "Convert speech to text instantly with AI." },
-              { img: "/assets/img3.png", text: "Sign Language AI", desc: "Real-time AI-powered sign language translation." },
+              { img: "/assets/img1.webp", text: "AR Science", desc: "Explore molecules in AR with interactive 3D models." },
+              { img: "/assets/img2.webp", text: "Voice → Text", desc: "Convert speech to text instantly with AI." },
+              { img: "/assets/img3.webp", text: "Sign Language AI", desc: "Real-time AI-powered sign language translation." },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -161,9 +161,9 @@ export default function HomePage() {
           {/* Row 2 */}
           <div className="flex flex-wrap justify-center sm:justify-end gap-6">
             {[
-              { img: "/assets/img4.png", text: "Scan & Learn", desc: "Scan books and get instant AI-powered explanations." },
-              { img: "/assets/img5.png", text: "Smart Analytics", desc: "AI dashboards for smarter student insights." },
-              { img: "/assets/img6.png", text: "Rural Learning", desc: "Bringing digital education to remote areas." },
+              { img: "/assets/img4.webp", text: "Scan & Learn", desc: "Scan books and get instant AI-powered explanations." },
+              { img: "/assets/img5.webp", text: "Smart Analytics", desc: "AI dashboards for smarter student insights." },
+              { img: "/assets/img6.webp", text: "Rural Learning", desc: "Bringing digital education to remote areas." },
             ].map((item, idx) => (
               <motion.div
                 key={idx + 3}
