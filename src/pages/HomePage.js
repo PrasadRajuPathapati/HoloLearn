@@ -186,56 +186,58 @@ export default function HomePage() {
           </div>
         </motion.div>
 
-        {/* Photo Panel */}
+        {/* Photo Modal */}
         <AnimatePresence>
           {activePhotoIndex !== null && (
             <>
               <motion.div
-                className="fixed inset-0 bg-black/50 z-40"
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setActivePhotoIndex(null)}
               />
               <motion.div
-                key="photo-panel"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "100%" }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="fixed bottom-0 left-0 right-0 sm:right-0 sm:top-0 sm:bottom-0 w-full sm:w-[420px] h-[80vh] sm:h-full bg-gray-900/95 border-t sm:border-l border-gray-700 rounded-t-2xl sm:rounded-none p-6 z-50 overflow-y-auto"
+                key="photo-modal"
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.85 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 flex items-center justify-center z-50 p-4"
               >
-                <button
-                  onClick={() => setActivePhotoIndex(null)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
-                >
-                  ✕
-                </button>
-                <img
-                  src={`/assets/img${activePhotoIndex + 1}.png`}
-                  alt=""
-                  className="rounded-xl mb-4 w-full"
-                />
-                <h2 className="text-xl sm:text-2xl font-bold mb-2 text-white">
-                  {[
-                    "AR Science",
-                    "Voice → Text",
-                    "Sign Language AI",
-                    "Scan & Learn",
-                    "Smart Analytics",
-                    "Rural Learning",
-                  ][activePhotoIndex]}
-                </h2>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                  {[
-                    "Explore molecules in AR with interactive 3D models.",
-                    "Convert speech to text instantly with AI.",
-                    "Real-time AI-powered sign language translation.",
-                    "Scan books and get instant AI-powered explanations.",
-                    "AI dashboards for smarter student insights.",
-                    "Bringing digital education to remote areas.",
-                  ][activePhotoIndex]}
-                </p>
+                <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
+                  <button
+                    onClick={() => setActivePhotoIndex(null)}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+                  >
+                    ✕
+                  </button>
+                  <img
+                    src={`/assets/img${activePhotoIndex + 1}.png`}
+                    alt=""
+                    className="rounded-xl mb-4 w-full"
+                  />
+                  <h2 className="text-xl sm:text-2xl font-bold mb-2 text-white">
+                    {[
+                      "AR Science",
+                      "Voice → Text",
+                      "Sign Language AI",
+                      "Scan & Learn",
+                      "Smart Analytics",
+                      "Rural Learning",
+                    ][activePhotoIndex]}
+                  </h2>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    {[
+                      "Explore molecules in AR with interactive 3D models.",
+                      "Convert speech to text instantly with AI.",
+                      "Real-time AI-powered sign language translation.",
+                      "Scan books and get instant AI-powered explanations.",
+                      "AI dashboards for smarter student insights.",
+                      "Bringing digital education to remote areas.",
+                    ][activePhotoIndex]}
+                  </p>
+                </div>
               </motion.div>
             </>
           )}
@@ -287,37 +289,39 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Feature Panel */}
+        {/* Feature Modal */}
         <AnimatePresence>
           {activeFeatureIndex !== null && (
             <>
               <motion.div
-                className="fixed inset-0 bg-black/50 z-40"
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setActiveFeatureIndex(null)}
               />
               <motion.div
-                key="feature-panel"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "100%" }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="fixed bottom-0 left-0 right-0 sm:right-0 sm:top-0 sm:bottom-0 w-full sm:w-[420px] h-[75vh] sm:h-full bg-gray-900/95 border-t sm:border-l border-gray-700 rounded-t-2xl sm:rounded-none p-6 sm:p-8 z-50 overflow-y-auto"
+                key="feature-modal"
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.85 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 flex items-center justify-center z-50 p-4"
               >
-                <button
-                  onClick={() => setActiveFeatureIndex(null)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
-                >
-                  ✕
-                </button>
-                <h2 className="text-xl sm:text-2xl font-extrabold mb-3">
-                  {features[activeFeatureIndex].title}
-                </h2>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                  {features[activeFeatureIndex].details}
-                </p>
+                <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
+                  <button
+                    onClick={() => setActiveFeatureIndex(null)}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+                  >
+                    ✕
+                  </button>
+                  <h2 className="text-xl sm:text-2xl font-extrabold mb-3">
+                    {features[activeFeatureIndex].title}
+                  </h2>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    {features[activeFeatureIndex].details}
+                  </p>
+                </div>
               </motion.div>
             </>
           )}
