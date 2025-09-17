@@ -57,13 +57,12 @@ export default function FeaturesHome() {
   ref={videoRef}
   autoPlay
   loop
-  muted={muted}       // start muted so mobile allows autoplay
-  playsInline         // required for iOS Safari
-  controls={false}    // hide default controls
-  className="absolute top-0 left-0 w-full h-full object-cover object-center"
+  muted={muted}
+  playsInline
+  preload="auto"
+  className="absolute top-0 left-0 w-full h-full object-cover"
 >
   <source src="/videos/hololearn.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
 </video>
 
 
