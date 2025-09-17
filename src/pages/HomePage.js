@@ -262,7 +262,7 @@ export default function HomePage() {
   whileTap={{ scale: 0.95 }}
   className="px-6 py-3 sm:px-8 sm:py-3 bg-green-600 hover:bg-green-700 rounded-lg text-white font-semibold shadow-lg text-sm sm:text-base"
 >
-  <Link to="/home">Join the Journey</Link>
+  <Link to="/features">Join the Journey</Link>
 </motion.button>
       </section>
 
