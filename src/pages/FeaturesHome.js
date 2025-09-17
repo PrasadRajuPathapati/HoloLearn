@@ -53,17 +53,19 @@ export default function FeaturesHome() {
       {/* 🔹 Hero Video Section */}
       <section className="relative w-full h-screen overflow-hidden">
         {/* Background video */}
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted={muted}
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover object-center"
-        >
-          <source src="/videos/hololearn.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+<video
+  ref={videoRef}
+  autoPlay
+  loop
+  muted={muted}       // start muted so mobile allows autoplay
+  playsInline         // required for iOS Safari
+  controls={false}    // hide default controls
+  className="absolute top-0 left-0 w-full h-full object-cover object-center"
+>
+  <source src="/videos/hololearn.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50" />
