@@ -1,7 +1,14 @@
-import HomePage from "./pages/HomePage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";      // your landing page
+import FeaturesHome from "./pages/FeaturesHome";  // the new home with features
 
-function App() {
-  return <HomePage />;
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />      {/* Landing page */}
+        <Route path="/home" element={<FeaturesHome />} />  {/* Full features home */}
+      </Routes>
+    </Router>
+  );
 }
-
-export default App;

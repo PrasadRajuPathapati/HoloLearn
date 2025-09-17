@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -189,57 +190,55 @@ export default function HomePage() {
         {/* Photo Modal */}
         <AnimatePresence>
           {activePhotoIndex !== null && (
-            <>
-              <motion.div
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setActivePhotoIndex(null)}
-              />
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActivePhotoIndex(null)}
+            >
               <motion.div
                 key="photo-modal"
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.85 }}
                 transition={{ duration: 0.3 }}
-                className="fixed inset-0 flex items-center justify-center z-50 p-4"
+                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
+                className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl"
               >
-                <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
-                  <button
-                    onClick={() => setActivePhotoIndex(null)}
-                    className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
-                  >
-                    ✕
-                  </button>
-                  <img
-                    src={`/assets/img${activePhotoIndex + 1}.png`}
-                    alt=""
-                    className="rounded-xl mb-4 w-full"
-                  />
-                  <h2 className="text-xl sm:text-2xl font-bold mb-2 text-white">
-                    {[
-                      "AR Science",
-                      "Voice → Text",
-                      "Sign Language AI",
-                      "Scan & Learn",
-                      "Smart Analytics",
-                      "Rural Learning",
-                    ][activePhotoIndex]}
-                  </h2>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    {[
-                      "Explore molecules in AR with interactive 3D models.",
-                      "Convert speech to text instantly with AI.",
-                      "Real-time AI-powered sign language translation.",
-                      "Scan books and get instant AI-powered explanations.",
-                      "AI dashboards for smarter student insights.",
-                      "Bringing digital education to remote areas.",
-                    ][activePhotoIndex]}
-                  </p>
-                </div>
+                <button
+                  onClick={() => setActivePhotoIndex(null)}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+                >
+                  ✕
+                </button>
+                <img
+                  src={`/assets/img${activePhotoIndex + 1}.png`}
+                  alt=""
+                  className="rounded-xl mb-4 w-full"
+                />
+                <h2 className="text-xl sm:text-2xl font-bold mb-2 text-white">
+                  {[
+                    "AR Science",
+                    "Voice → Text",
+                    "Sign Language AI",
+                    "Scan & Learn",
+                    "Smart Analytics",
+                    "Rural Learning",
+                  ][activePhotoIndex]}
+                </h2>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  {[
+                    "Explore molecules in AR with interactive 3D models.",
+                    "Convert speech to text instantly with AI.",
+                    "Real-time AI-powered sign language translation.",
+                    "Scan books and get instant AI-powered explanations.",
+                    "AI dashboards for smarter student insights.",
+                    "Bringing digital education to remote areas.",
+                  ][activePhotoIndex]}
+                </p>
               </motion.div>
-            </>
+            </motion.div>
           )}
         </AnimatePresence>
       </section>
@@ -258,13 +257,13 @@ export default function HomePage() {
           Our mission is to make learning inclusive, accessible, and engaging 
           for students everywhere — online or offline.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 sm:px-8 sm:py-3 bg-green-600 hover:bg-green-700 rounded-lg text-white font-semibold shadow-lg text-sm sm:text-base"
-        >
-          Join the Journey
-        </motion.button>
+<motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="px-6 py-3 sm:px-8 sm:py-3 bg-green-600 hover:bg-green-700 rounded-lg text-white font-semibold shadow-lg text-sm sm:text-base"
+>
+  <Link to="/home">Join the Journey</Link>
+</motion.button>
       </section>
 
       {/* Feature Grid */}
@@ -292,38 +291,36 @@ export default function HomePage() {
         {/* Feature Modal */}
         <AnimatePresence>
           {activeFeatureIndex !== null && (
-            <>
-              <motion.div
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setActiveFeatureIndex(null)}
-              />
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveFeatureIndex(null)}
+            >
               <motion.div
                 key="feature-modal"
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.85 }}
                 transition={{ duration: 0.3 }}
-                className="fixed inset-0 flex items-center justify-center z-50 p-4"
+                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
+                className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl"
               >
-                <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
-                  <button
-                    onClick={() => setActiveFeatureIndex(null)}
-                    className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
-                  >
-                    ✕
-                  </button>
-                  <h2 className="text-xl sm:text-2xl font-extrabold mb-3">
-                    {features[activeFeatureIndex].title}
-                  </h2>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    {features[activeFeatureIndex].details}
-                  </p>
-                </div>
+                <button
+                  onClick={() => setActiveFeatureIndex(null)}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+                >
+                  ✕
+                </button>
+                <h2 className="text-xl sm:text-2xl font-extrabold mb-3">
+                  {features[activeFeatureIndex].title}
+                </h2>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  {features[activeFeatureIndex].details}
+                </p>
               </motion.div>
-            </>
+            </motion.div>
           )}
         </AnimatePresence>
       </section>
