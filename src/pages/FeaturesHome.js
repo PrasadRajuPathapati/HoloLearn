@@ -54,17 +54,20 @@ export default function FeaturesHome() {
       <section className="relative w-full bg-black">
   {/* 🔹 Video Wrapper */}
   <div className="relative w-full h-0 pb-[56.25%]">
-    <video
-      autoPlay
-      loop
-      muted={muted}
-      playsInline
-      preload="auto"
-      className="absolute top-0 left-0 w-full h-full object-cover"
-    >
-      <source src="/videos/hololearn.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+<video
+  autoPlay
+  loop
+  muted={muted}
+  playsInline
+  preload="auto"
+  className="absolute top-0 left-0 w-full h-full object-cover"
+>
+  <source 
+    src="https://01ozbtt8nuk5mz4s.public.blob.vercel-storage.com/hololearn.mp4" 
+    type="video/mp4" 
+  />
+</video>
+
 
     {/* Overlay */}
     <div className="absolute inset-0 bg-black/50" />
